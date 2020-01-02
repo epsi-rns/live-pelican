@@ -5,7 +5,7 @@ Tags:     pop, 90s
 Slug:     michael-jackson-gone-too-soon
 Author:   Michael Jackson
 
-Shiny and sparkly.
-And splendidly bright.
-Here one day.
+Shiny and sparkly.  
+And splendidly bright.  
+Here one day.  
 Gone one night.
