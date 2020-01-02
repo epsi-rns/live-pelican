@@ -68,8 +68,6 @@ PLUGINS = [
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
-
-
 import lib.libfilter
 JINJA_FILTERS = {
   'shuffle'    : lib.libfilter.filter_shuffle,
