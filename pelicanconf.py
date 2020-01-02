@@ -125,11 +125,13 @@ JINJA_FILTERS = {
 
 # Data
 
+# CRITICAL: ImportError: No module named lib.friends
+
 # Blogroll: Helper for friends widget
-from lib.friends import *
-from lib.archives_gitlab import *
-from lib.archives_github import * 
-from lib.archives_pelican import *
+# from lib.friends import *
+# from lib.archives_gitlab import *
+# from lib.archives_github import * 
+# from lib.archives_pelican import *
 
 # Opengraph
 OG_LOCALE = "en_US"
