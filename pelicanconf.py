@@ -59,14 +59,6 @@ CURRENTYEAR = date.today().year
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
-import lib.libfilter
-JINJA_FILTERS = {
-  'shuffle'    : filter_shuffle,
-  'split'      : filter_split,
-  'navigation' : filter_navigation,
-  'keyjoin'    : filter_keyjoin,
-}
-
 # Data
 
 # Blogroll: Helper for friends widget
@@ -115,6 +107,14 @@ def filter_keyjoin(tags, category, keywords):
   terms.extend(tags)
   terms.extend(keywords)
   return terms
+
+# import lib.libfilter
+JINJA_FILTERS = {
+  'shuffle'    : filter_shuffle,
+  'split'      : filter_split,
+  'navigation' : filter_navigation,
+  'keyjoin'    : filter_keyjoin,
+}
 
 # Plugins
 
