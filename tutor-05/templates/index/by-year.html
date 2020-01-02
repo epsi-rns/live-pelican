@@ -1,0 +1,35 @@
+
+  {% for group_month in dates 
+       | groupby('date.month') 
+       | sort(reverse=True) %}
+    <div id="archive">
+
+      <section class="{{ color_main }} lighten-5 z-depth-1 hoverable
+                      p-5 m-y-5">
+        <div class ="anchor-target archive-month" 
+             id="{{ group_month.grouper }}"
+          >{{ group_month.list[0].date.strftime("%B") }}
+        </div>
+
+        <div class="archive-list p-y-5">
+          {% for article in group_month.list %}
+            <div class="archive-item">
+              <div class="is-pulled-left">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" 
+                   title="Permalink to {{ article.title|striptags }}"
+                  >{{ article.title }}
+              </a></div>
+              <div class="is-pulled-right has-text-right">
+              <time>
+                  {{ article.date.strftime("%d %b") }}&nbsp;
+                  <span class="fa fa-calendar"></span>
+              </time></div>
+              <div class="is-clearfix"></div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    </div>
+  {% endfor %}
+

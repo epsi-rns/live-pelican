@@ -1,0 +1,43 @@
+{% extends "layouts/columns-single.html" %}
+
+{% set color_main = 'blue' %}
+{% set blog_class = 'has-text-centered' %}
+
+{% block blog_header %}
+  <div class="main_title">
+  {% block content_title %}
+    <h2 class="title is-4" itemprop="name headline">
+      {{ page.title }}</h2>
+  {% endblock %}  
+  </div>
+{% endblock %}
+
+{% block blog_body %}
+  <br/>
+
+  <p>
+    <a class="button is-dark
+    blue-grey darken-2 hoverable m-b-5"
+       href="{{ SITEURL }}/blog"
+      >Articles Sorted by Date</a>
+    <a class="button is-dark
+    blue-grey darken-1 hoverable m-b-5"
+       href="{{ SITEURL }}/tags"
+      >Articles Sorted by Tag</a>
+  </p>
+
+  <p>As always,
+  should you be caught or killed,
+  any knowledge of your actions will be disavowed.</p>
+
+  <div class="justify-content-center">
+    <img src="{{ SITEURL }}/theme/images/cards/one-page.png" 
+         alt="business card">
+  </div>
+
+  <p class="lead text-muted">
+    <span class="fas fa-home"></span>&nbsp;
+      Whitewood Street, Monday Market,
+      East Jakarta, 55112, Indonesia.
+  </p>
+{% endblock %}

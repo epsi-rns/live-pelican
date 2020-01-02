@@ -1,0 +1,36 @@
+{% extends "layouts/columns-double.html" %}
+
+{% set periodtitle = period | reverse | join(' ') %}
+{% set headtitle = "Archives | " ~ periodtitle %}
+
+{% set color_main  = 'cyan' %}
+{% set color_aside = 'purple' %}
+
+{% block blog_header %}
+  <div class="main_title"> 
+     <h2 class="title is-4" itemprop="name headline">
+       Archives for {{ period | reverse | join(' ') }}</h2>
+  </div>
+{% endblock %}
+
+{% block blog_body %}
+  {% if period[1] %}
+    {% include 'index/by-month.html' %}
+  {% else %}
+    {% include 'index/by-year.html' %}
+  {% endif %}
+{% endblock %}
+
+{% block widget_header %}
+  <strong>Side Menu</strong>
+  <span class="fas fa-fingerprint is-pulled-right"></span>
+{% endblock %}
+
+{% block widget_body %}
+  This is a period archives kind layout.
+  {% if period[1] %}
+    Archive by month.
+  {% else %}
+    Archive by year.
+  {% endif %} 
+{% endblock %}

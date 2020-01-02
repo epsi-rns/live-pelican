@@ -3,14 +3,11 @@
 from __future__ import unicode_literals
 from datetime import date
 
-import sys
-sys.path.append('.')
-
 AUTHOR = 'epsi'
 SITENAME = 'Yet Another Static Blog'
 SITEURL = ''
 
-THEME = "tutor-07"
+THEME = "tutor-05"
 
 PATH = 'content'
 
@@ -18,15 +15,14 @@ TIMEZONE = 'Asia/Jakarta'
 
 DEFAULT_LANG = 'en'
 
-DEFAULT_PAGINATION = 1
+DEFAULT_PAGINATION = 10
 
 # Feed generation is usually not desired when developing
-FEED_RSS              = 'feed.xml'
-FEED_ALL_ATOM         = None
-CATEGORY_FEED_ATOM    = None
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM      = None
-AUTHOR_FEED_RSS       = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -56,80 +52,4 @@ AUTHOR_SAVE_AS        = 'author/{slug}.html'
 
 CURRENTYEAR = date.today().year
 
-# Filter
-# https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
-# Data
-
-# Blogroll: Helper for friends widget
-# https://stackoverflow.com/questions/31607710/randomize-elements-of-a-list-in-jinja-2
-
-import random
-
-def filter_shuffle(seq):
-  try:
-    result = list(seq)
-    random.shuffle(result)
-    return result
-  except:
-    return seq
-
-def filter_split(text, separator):
-  return text.split(separator)
-
-def filter_navigation(articles_by_dates, article):
-  result = {'has_prev': False, 'has_next': False, 'id': -1}
-
-  for index, post in enumerate(articles_by_dates):
-    if post.url == article.url: result['id'] = index
-
-  if result['id'] + 1 > 1:
-    result['has_prev'] = True
-
-    for index, post in enumerate(articles_by_dates):
-      if index == result['id'] - 1:
-        result['prev_url']   = post.url
-        result['prev_title'] = post.title
-
-  if result['id'] + 1 < len(articles_by_dates):
-    result['has_next'] = True
-
-    for index, post in enumerate(articles_by_dates):
-      if index == result['id'] + 1:
-        result['next_url']   = post.url
-        result['next_title'] = post.title
-
-  return result
-
-def filter_keyjoin(tags, category, keywords):
-  terms = []
-  terms.append(category)
-  terms.extend(tags)
-  terms.extend(keywords)
-  return terms
-
-# import lib.libfilter
-JINJA_FILTERS = {
-  'shuffle'    : filter_shuffle,
-  'split'      : filter_split,
-  'navigation' : filter_navigation,
-  'keyjoin'    : filter_keyjoin,
-}
-
-# Plugins
-
-# from plugins.jinja2content import jinja2content
-
-# PLUGINS = [
-    # ...
-#     "plugins.jinja2content",
-#]
-
-# Opengraph
-OG_LOCALE = "en_US"
-OG_LOGO   = "/assets/images/logo-gear-opengraph.png"
-
-# Service
-
-# GOOGLE_ANALYTIC_KEY = ""
-# DISQUS_KEY = ""

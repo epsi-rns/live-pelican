@@ -1,0 +1,25 @@
+
+  {% for term, articles in terms | sort %}
+    <div id="{{ term }}" class ="anchor-target">
+      <span class="fa fa-tag"></span>&nbsp; 
+      {{ term }}
+    </div>
+
+    <div class="archive-list p-y-5">
+    {% for article in articles %}
+      <div class="archive-item meta-item">
+        <div class="meta_link has-text-right">
+          <time class="meta_time is-pulled-right"
+                datetime="{{ article.date.isoformat() }}">
+            {{ article.date.strftime("%b %-d, %Y") }}&nbsp;
+            &nbsp;<span class="{{ icon }}"></span></time></div>
+        <div class="is-pulled-left">
+        <a href="{{ SITEURL }}/{{ article.url }}">
+          {{ article.title }}
+        </a></div>
+        <div class="is-clearfix"></div>
+      </div>
+    {% endfor %}
+    </div>
+  {% endfor %}
+
