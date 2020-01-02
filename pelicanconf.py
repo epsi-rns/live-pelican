@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-from datetime import date
 
 AUTHOR = 'epsi'
 SITENAME = 'Yet Another Static Blog'
 SITEURL = ''
 
-THEME = "tutor-05"
+THEME = "tutor-02"
 
 PATH = 'content'
 
@@ -27,9 +26,6 @@ AUTHOR_FEED_RSS = None
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-INDEX_URL             = 'blog/'
-INDEX_SAVE_AS         = 'blog/index.html'
-
 ARTICLE_URL           = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS       = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
@@ -47,9 +43,3 @@ CATEGORY_SAVE_AS      = 'category/{slug}.html'
 
 AUTHOR_URL            = 'author/{slug}'
 AUTHOR_SAVE_AS        = 'author/{slug}.html'
-
-# Custom Theme Variables
-
-CURRENTYEAR = date.today().year
-
-

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% set headtitle = page.title %}
+
+{% block content %}
+  <h1>{{ page.title }}</h1>
+  <strong>This is a page kind layout.</strong>
+  <br/>
+  
+  {{ page.content }}
+  
+  <blockquote>Any question? <b>Good Luck</b>.</blockquote>
+{% endblock %}
+

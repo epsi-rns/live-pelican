@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% set periodtitle = period | reverse | join(' ') %}
+{% set headtitle = "Archives | " ~ periodtitle %}
+
+{% block content %}
+  <h1>Archives for {{ periodtitle }}</h1>
+
+  <dl>
+  {% for article in dates %}
+    <dt>{{ article.locale_date }}</dt>
+    <dd><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" 
+           title="Permalink to {{ article.title|striptags }}"
+          >{{ article.title }}</a></dd>
+    <br/>
+  {% endfor %}
+  </dl>
+{% endblock %}
