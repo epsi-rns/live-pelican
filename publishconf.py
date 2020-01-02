@@ -23,31 +23,3 @@ DELETE_OUTPUT_DIRECTORY = True
 
 #DISQUS_SITENAME = ""
 #GOOGLE_ANALYTICS = ""
-
-# Plugins
-
-from plugins.jinja2content import jinja2content
-
-PLUGINS = [
-    # ...
-    "plugins.jinja2content",
-]
-
-# Filter
-# https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
-
-import lib.libfilter
-JINJA_FILTERS = {
-  'shuffle'    : lib.libfilter.filter_shuffle,
-  'split'      : lib.libfilter.filter_split,
-  'navigation' : lib.libfilter.filter_navigation,
-  'keyjoin'    : lib.libfilter.filter_keyjoin,
-}
-
-# Data
-
-# Blogroll: Helper for friends widget
-from lib.friends import *
-from lib.archives_gitlab import *
-from lib.archives_github import * 
-from lib.archives_pelican import *

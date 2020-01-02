@@ -56,15 +56,6 @@ AUTHOR_SAVE_AS        = 'author/{slug}.html'
 
 CURRENTYEAR = date.today().year
 
-# Plugins
-
-from plugins.jinja2content import jinja2content
-
-PLUGINS = [
-    # ...
-    "plugins.jinja2content",
-]
-
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
@@ -83,6 +74,15 @@ from lib.friends import *
 from lib.archives_gitlab import *
 from lib.archives_github import * 
 from lib.archives_pelican import *
+
+# Plugins
+
+from plugins.jinja2content import jinja2content
+
+PLUGINS = [
+    # ...
+    "plugins.jinja2content",
+]
 
 # Opengraph
 OG_LOCALE = "en_US"
