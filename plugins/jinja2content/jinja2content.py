@@ -15,7 +15,7 @@ from tempfile import NamedTemporaryFile
 
 __metaclass__ = type
 
-class JinjaContentMixin:
+class JinjaContentMixin(object):
     def __init__(self, *args, **kwargs):
         # Python 2.7: CRITICAL: TypeError: super() takes at least 1 argument (0 given)
         super(JinjaContentMixin, self).__init__(*args, **kwargs)
