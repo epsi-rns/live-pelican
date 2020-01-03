@@ -1,4 +1,4 @@
 [build]
   publish = "output"
   command = "pelican content -s publishconf.py"
-# environment = { PYTHONPATH=.:${PYTHONPATH} }
+  PYTHON_VERSION = "3.5"
