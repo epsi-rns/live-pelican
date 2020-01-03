@@ -79,7 +79,7 @@ path_plugins = os.path.abspath(os.path.join(path_this, 'plugins'))
 sys.path.append(path_lib)
 sys.path.append(path_plugins)
 
-# Plugins
+# -- Plugins --
 
 # from jinja2content import jinja2content
 
@@ -88,7 +88,7 @@ PLUGINS = [
     "jinja2content",
 ]
 
-# Filter
+# -- Filter --
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
 from libfilter import *
@@ -99,9 +99,7 @@ JINJA_FILTERS = {
   'keyjoin'    : filter_keyjoin,
 }
 
-# Data
-
-# CRITICAL: ImportError: No module named lib.friends
+# -- Data --
 
 # Blogroll: Helper for friends widget
 from friends import *

@@ -15,7 +15,7 @@ from tempfile import NamedTemporaryFile
 
 class JinjaContentMixin:
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(JinjaContentMixin, self).__init__(*args, **kwargs)
 
         # will look first in 'JINJA2CONTENT_TEMPLATES', by default the
         # content root path, then in the theme's templates
