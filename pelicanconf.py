@@ -75,8 +75,9 @@ import os, sys
 
 path_this = os.path.dirname(os.path.abspath(__file__))
 path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
-path_lib = os.path.abspath(os.path.join(path_this, 'plugins'))
+path_plugins = os.path.abspath(os.path.join(path_this, 'plugins'))
 sys.path.append(path_lib)
+sys.path.append(path_plugins)
 
 # Plugins
 
