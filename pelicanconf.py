@@ -9,6 +9,7 @@ import os, sys
 
 path_this = os.path.dirname(os.path.abspath(__file__))
 path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
+path_lib = os.path.abspath(os.path.join(path_this, 'plugins'))
 sys.path.append(path_lib)
 
 # -- -- -- Pelican Configuration Starts Here
@@ -67,12 +68,12 @@ CURRENTYEAR = date.today().year
 
 # Plugins
 
-# from plugins.jinja2content import jinja2content
+from jinja2content import jinja2content
 
-# PLUGINS = [
-#    # ...
-    #"plugins.jinja2content",
-# ]
+PLUGINS = [
+    # ...
+    jinja2content",
+]
 
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
