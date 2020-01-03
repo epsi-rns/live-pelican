@@ -83,10 +83,10 @@ sys.path.append(path_plugins)
 
 # from jinja2content import jinja2content
 
-#PLUGINS = [
+PLUGINS = [
     # ...
 #    "jinja2content",
-#]
+]
 
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
