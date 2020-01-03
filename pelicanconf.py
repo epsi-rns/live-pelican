@@ -75,18 +75,18 @@ import os, sys
 
 path_this = os.path.dirname(os.path.abspath(__file__))
 path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
-path_plugins = os.path.abspath(os.path.join(path_this, 'plugins'))
+#path_plugins = os.path.abspath(os.path.join(path_this, 'plugins'))
 sys.path.append(path_lib)
-sys.path.append(path_plugins)
+#sys.path.append(path_plugins)
 
 # Plugins
 
-from jinja2content import jinja2content
+# from jinja2content import jinja2content
 
-PLUGINS = [
+#PLUGINS = [
     # ...
-    "jinja2content",
-]
+#    "jinja2content",
+#]
 
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
