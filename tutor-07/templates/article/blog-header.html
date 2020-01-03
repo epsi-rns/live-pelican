@@ -8,14 +8,16 @@
   <div class="field p-t-5">
     {% if article.author %}
     <div class="is-pulled-left p-b-5">
-    <span class="meta_author tag is-small is-dark
-                 indigo z-depth-1 hoverable">
+    <a href="{{ SITEURL }}/{{ article.author.url }}">
+      <span class="meta_author tag is-small is-dark
+                   indigo z-depth-1 hoverable">
         <span class="fa fa-user"></span>
         &nbsp;
         <span itemprop="author"
               itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">{{ article.author }}</span></span>            
-    </span>
+      </span>
+    </a>
     &nbsp;
     </div>
     {% endif %}
