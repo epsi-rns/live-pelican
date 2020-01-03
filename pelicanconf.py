@@ -66,12 +66,12 @@ CURRENTYEAR = date.today().year
 
 # Plugins
 
-from plugins.jinja2content import jinja2content
+# from plugins.jinja2content import jinja2content
 
-PLUGINS = [
-    # ...
-    "plugins.jinja2content",
-]
+# PLUGINS = [
+#    # ...
+    #"plugins.jinja2content",
+# ]
 
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
