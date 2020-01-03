@@ -17,7 +17,8 @@ __metaclass__ = type
 
 class JinjaContentMixin:
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        # Python 2.7: CRITICAL: TypeError: super() takes at least 1 argument (0 given)
+        super(JinjaContentMixin, self).__init__(*args, **kwargs)
 
         # will look first in 'JINJA2CONTENT_TEMPLATES', by default the
         # content root path, then in the theme's templates
