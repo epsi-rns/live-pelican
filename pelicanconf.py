@@ -72,7 +72,7 @@ from jinja2content import jinja2content
 
 PLUGINS = [
     # ...
-    jinja2content",
+    "jinja2content",
 ]
 
 # Filter
