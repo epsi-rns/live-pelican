@@ -3,15 +3,6 @@
 from __future__ import unicode_literals
 from datetime import date
 
-# Fix netlify path, credit to Leksono Nanto
-
-import os, sys
-
-path_this = os.path.dirname(os.path.abspath(__file__))
-path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
-path_lib = os.path.abspath(os.path.join(path_this, 'plugins'))
-sys.path.append(path_lib)
-
 # -- -- -- Pelican Configuration Starts Here
 
 AUTHOR = 'epsi'
@@ -64,7 +55,28 @@ AUTHOR_SAVE_AS        = 'author/{slug}.html'
 
 CURRENTYEAR = date.today().year
 
+
+# Opengraph
+OG_LOCALE = "en_US"
+OG_LOGO   = "/assets/images/logo-gear-opengraph.png"
+
+# Service
+
+# GOOGLE_ANALYTIC_KEY = ""
+# DISQUS_KEY = ""
+
 # -- -- -- Pelican Configuration End Here
+
+# Plugin, Filter, Data
+
+# Fix netlify path, credit to Leksono Nanto
+
+import os, sys
+
+path_this = os.path.dirname(os.path.abspath(__file__))
+path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
+path_lib = os.path.abspath(os.path.join(path_this, 'plugins'))
+sys.path.append(path_lib)
 
 # Plugins
 
@@ -78,12 +90,12 @@ PLUGINS = [
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
-import libfilter
+from libfilter import *
 JINJA_FILTERS = {
-  'shuffle'    : libfilter.filter_shuffle,
-  'split'      : libfilter.filter_split,
-  'navigation' : libfilter.filter_navigation,
-  'keyjoin'    : libfilter.filter_keyjoin,
+  'shuffle'    : filter_shuffle,
+  'split'      : filter_split,
+  'navigation' : filter_navigation,
+  'keyjoin'    : filter_keyjoin,
 }
 
 # Data
@@ -95,12 +107,3 @@ from friends import *
 from archives_gitlab import *
 from archives_github import * 
 from archives_pelican import *
-
-# Opengraph
-OG_LOCALE = "en_US"
-OG_LOGO   = "/assets/images/logo-gear-opengraph.png"
-
-# Service
-
-# GOOGLE_ANALYTIC_KEY = ""
-# DISQUS_KEY = ""
