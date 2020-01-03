@@ -85,7 +85,7 @@ sys.path.append(path_plugins)
 
 PLUGINS = [
     # ...
-    "jinja2content",
+#   "jinja2content",
 ]
 
 # -- Filter --
