@@ -3,8 +3,15 @@
 from __future__ import unicode_literals
 from datetime import date
 
-import sys
-sys.path.append('.')
+# import sys
+# sys.path.append('.')
+
+import os, sys
+
+path_this = os.path.dirname(os.path.abspath(__file__))
+path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
+
+sys.path.append(path_this)
 
 AUTHOR = 'epsi'
 SITENAME = 'Yet Another Static Blog'
@@ -135,6 +142,8 @@ JINJA_FILTERS = {
 
 # failed:  from . import friends
 # failed: FRIENDS = lib.friends.FRIENDS
+
+from friends import *
 
 # Opengraph
 OG_LOCALE = "en_US"
