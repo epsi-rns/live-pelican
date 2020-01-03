@@ -8,7 +8,8 @@ from datetime import date
 import os, sys
 
 path_this = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(path_this)
+path_lib = os.path.abspath(os.path.join(path_this, 'lib'))
+sys.path.append(path_lib)
 
 # -- -- -- Pelican Configuration Starts Here
 
@@ -76,12 +77,12 @@ CURRENTYEAR = date.today().year
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
 
-import lib.libfilter
+import libfilter
 JINJA_FILTERS = {
-  'shuffle'    : lib.libfilter.filter_shuffle,
-  'split'      : lib.libfilter.filter_split,
-  'navigation' : lib.libfilter.filter_navigation,
-  'keyjoin'    : lib.libfilter.filter_keyjoin,
+  'shuffle'    : libfilter.filter_shuffle,
+  'split'      : libfilter.filter_split,
+  'navigation' : libfilter.filter_navigation,
+  'keyjoin'    : libfilter.filter_keyjoin,
 }
 
 # Data
@@ -89,10 +90,10 @@ JINJA_FILTERS = {
 # CRITICAL: ImportError: No module named lib.friends
 
 # Blogroll: Helper for friends widget
-from lib.friends import *
-from lib.archives_gitlab import *
-from lib.archives_github import * 
-from lib.archives_pelican import *
+from friends import *
+from archives_gitlab import *
+from archives_github import * 
+from archives_pelican import *
 
 # Opengraph
 OG_LOCALE = "en_US"
