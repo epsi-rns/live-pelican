@@ -58,12 +58,12 @@ CURRENTYEAR = date.today().year
 
 # Plugins
 
-from plugins.jinja2content import jinja2content
+# from plugins.jinja2content import jinja2content
 
-PLUGINS = [
+# PLUGINS = [
     # ...
-    "plugins.jinja2content",
-]
+#     "plugins.jinja2content",
+# ]
 
 # Filter
 # https://linkpeek.com/blog/how-to-add-a-custom-jinja-filter-to-pelican.html
@@ -133,8 +133,8 @@ JINJA_FILTERS = {
 # from lib.archives_github import * 
 # from lib.archives_pelican import *
 
-# from . import friends
-# FRIENDS = lib.friends.FRIENDS
+# failed:  from . import friends
+# failed: FRIENDS = lib.friends.FRIENDS
 
 # Opengraph
 OG_LOCALE = "en_US"
