@@ -17,7 +17,7 @@ __metaclass__ = type
 
 class JinjaContentMixin():
     def __init__(self, *args, **kwargs):
-        # Python 2.7: CRITICAL: TypeError: super() takes at least 1 argument (0 given)
+        # Python 2.7 in netlify: CRITICAL: TypeError: super() takes at least 1 argument (0 given)
         super().__init__(*args, **kwargs)
 
         # will look first in 'JINJA2CONTENT_TEMPLATES', by default the
